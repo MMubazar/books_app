@@ -39,15 +39,15 @@ export class DashboardPage implements OnInit {
     this.router.navigate(['/login']);
   }
   updateLocalStorage() {
-    const favoriteBookIds = this.all_data
-      .filter((book: any) => book.isFavorite)
-      .map((book: any) => book.id);
+    const favoriteBookIds = this.all_data.filter(
+      (book: any) => book.isFavorite
+    );
     localStorage.setItem('favoriteBooks', JSON.stringify(favoriteBookIds));
   }
   toggleFavorite(bookId: number) {
     const book = this.all_data.find((b: any) => b.id === bookId);
     if (book) {
-      book.isFavorite = !book.isFavorite; // Toggle favorite status
+      book.isFavorite = !book.isFavorite;
       this.updateLocalStorage();
     }
   }

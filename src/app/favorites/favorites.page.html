@@ -10,7 +10,12 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let book of favoriteBooks">
+      <ion-col
+        size="12"
+        size-md="6"
+        size-lg="4"
+        *ngFor="let book of favoriteBooks"
+      >
         <ion-card>
           <ion-img [src]="book.bookImg" alt="Book Image"></ion-img>
           <ion-card-header>
