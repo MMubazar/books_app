@@ -23,6 +23,16 @@
           />
           <h2>{{book.bookName}}</h2>
           <p>{{book.authName}}</p>
+          <ion-button
+            class="liked"
+            fill="clear"
+            [color]="book.isFavorite ? 'danger' : 'medium'"
+            (click)="toggleFavorite(book.id)"
+          >
+            <ion-icon
+              [name]="book.isFavorite ? 'heart' : 'heart-outline'"
+            ></ion-icon>
+          </ion-button>
         </div>
       </swiper-slide>
     </ng-container>
