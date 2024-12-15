@@ -26,9 +26,9 @@
           (click)="clickFn(i)"
         >
           <ion-thumbnail slot="start">
-            <img [src]="book.image_url" alt="Book Image" />
+            <img src="{{book.bookImg}}" alt="Book Image" />
           </ion-thumbnail>
-          <ion-label>{{ book.title }}</ion-label>
+          <ion-label>{{ book.bookName }}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>
