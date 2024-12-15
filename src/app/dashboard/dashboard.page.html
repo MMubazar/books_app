@@ -46,7 +46,7 @@
       [slidesPerView]="3"
       routerLink="/book-detail"
     >
-      <ng-container *ngFor="let books of Famous_books">
+      <ng-container *ngFor="let books of all_data">
         <swiper-slide>
           <div class="slide-content">
             <img
@@ -56,6 +56,16 @@
             />
             <h2>{{books.bookName}}</h2>
             <p>{{books.authName}}</p>
+            <ion-button
+              class="liked"
+              fill="clear"
+              [color]="books?.isFavorite ? 'danger' : 'medium'"
+              (click)="toggleFavorite(books?.id)"
+            >
+              <ion-icon
+                [name]="books?.isFavorite ? 'heart' : 'heart-outline'"
+              ></ion-icon>
+            </ion-button>
           </div>
         </swiper-slide>
       </ng-container>
